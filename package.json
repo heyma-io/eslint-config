@@ -1,0 +1,27 @@
+{
+  "name": "@heyma/eslint-config",
+  "version": "1.0.0",
+  "description": "Heyma eslint config",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heyma-io/eslint-config.git"
+  },
+  "author": "heyma",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/heyma-io/eslint-config/issues"
+  },
+  "homepage": "https://github.com/heyma-io/eslint-config#readme",
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "eslint": "^7.12.1"
+  }
+}
