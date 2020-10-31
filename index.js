@@ -148,8 +148,8 @@ module.exports = {
         }],
         "max-lines-per-function": ["error", {
             max: 50,
-            skipBlankLines: true,
-            skipComments: true
+            skipBlankLines: false,
+            skipComments: false
         }],
         "max-nested-callbacks": ["error", {
             max: 1
@@ -251,8 +251,8 @@ module.exports = {
         "prefer-spread": ["error"],
         "prefer-template": ["error"],
         "rest-spread-spacing": ["error", "never"],
-        "symbol-description":["error"],
-        "template-curly-spacing":["error"],
+        "symbol-description": ["error"],
+        "template-curly-spacing": ["error"],
         "yield-star-spacing": ["error", "before"]
     }
 }
