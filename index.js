@@ -108,7 +108,7 @@ module.exports = {
         "function-paren-newline": ["error", "multiline"],
         "id-length": ["error", {
             min: 2,
-            max: 20
+            max: 30
         }],
         "indent": ["error", 2, {
             SwitchCase: 1,
@@ -251,7 +251,6 @@ module.exports = {
         "prefer-spread": ["error"],
         "prefer-template": ["error"],
         "rest-spread-spacing": ["error", "never"],
-        "sort-imports":["error"],
         "symbol-description":["error"],
         "template-curly-spacing":["error"],
         "yield-star-spacing": ["error", "before"]
