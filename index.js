@@ -51,7 +51,11 @@ module.exports = {
         "no-labels": ["error"],
         "no-lone-blocks": ["error"],
         "no-loop-func": ["error"],
-        "no-magic-numbers": ["error"],
+        "no-magic-numbers": [
+            "error", {
+                ignoreDefaultValues: true
+            }
+        ],
         "no-multi-spaces": ["error"],
         "no-new": ["error"],
         "no-new-func": ["error"],
@@ -81,22 +85,28 @@ module.exports = {
         "no-label-var": ["error"],
         "no-shadow": ["error"],
         "no-undefined": ["error"],
-        "array-bracket-newline": ["error", {
-            multiline: true
-        }],
+        "array-bracket-newline": [
+            "error", {
+                multiline: true
+            }
+        ],
         "array-bracket-spacing": ["error", "never"],
-        "array-element-newline": ["error", "always"],
+        "array-element-newline": ["error", "consistent"],
         "block-spacing": ["error", "always"],
-        "brace-style": ["error", "1tbs", {
-            allowSingleLine: true
-        }],
+        "brace-style": [
+            "error", "1tbs", {
+                allowSingleLine: true
+            }
+        ],
         "camelcase": ["error"],
         "capitalized-comments": ["error", "always"],
         "comma-dangle": ["error", "never"],
-        "comma-spacing": ["error", {
-            before: false,
-            after: true
-        }],
+        "comma-spacing": [
+            "error", {
+                before: false,
+                after: true
+            }
+        ],
         "comma-style": ["error", "last"],
         "computed-property-spacing": ["error", "never"],
         "consistent-this": ["error", "that"],
@@ -106,64 +116,105 @@ module.exports = {
         "func-style": ["error", "expression"],
         "function-call-argument-newline": ["error", "consistent"],
         "function-paren-newline": ["error", "multiline"],
-        "id-length": ["error", {
-            min: 2,
-            max: 30
-        }],
-        "indent": ["error", 2, {
-            SwitchCase: 1,
-            VariableDeclarator: "first",
-            MemberExpression: 1,
-        }],
+        "id-length": [
+            "error", {
+                min: 2,
+                max: 30
+            }
+        ],
+        "indent": [
+            "error", 2, {
+                SwitchCase: 1,
+                VariableDeclarator: "first",
+                MemberExpression: 2,
+                FunctionDeclaration: {
+                    body: 1,
+                    parameters: "first"
+                },
+                FunctionExpression: {
+                    body: 1,
+                    parameters: "first"
+                },
+                CallExpression: {
+                    arguments: "first"
+                },
+                ArrayExpression: "first",
+                ObjectExpression: "first",
+                ImportDeclaration: "first",
+                offsetTernaryExpressions: true
+            }
+        ],
         "jsx-quotes": ["error", "prefer-double"],
-        "key-spacing": ["error", {
-            beforeColon: false,
-            afterColon: true
-        }],
-        "keyword-spacing": ["error", {
-            before: true,
-            after: true
-        }],
-        "line-comment-position": ["error", {
-            position: "above"
-        }],
+        "key-spacing": [
+            "error", {
+                beforeColon: false,
+                afterColon: true
+            }
+        ],
+        "keyword-spacing": [
+            "error", {
+                before: true,
+                after: true
+            }
+        ],
+        "line-comment-position": [
+            "error", {
+                position: "above"
+            }
+        ],
         "linebreak-style": ["error", "unix"],
-        "lines-around-comment": ["error", {
-            beforeBlockComment: true,
-            afterBlockComment: true,
-            beforeLineComment: true,
-            afterLineComment: false,
-            allowArrayStart: true,
-            allowObjectStart: true
-        }],
+        "lines-around-comment": [
+            "error", {
+                beforeBlockComment: true,
+                afterBlockComment: true,
+                beforeLineComment: true,
+                afterLineComment: false,
+                allowArrayStart: true,
+                allowObjectStart: true
+            }
+        ],
         "lines-between-class-members": ["error", "always"],
         "max-depth": ["error", 3],
-        "max-len": ["error", {
-            ignoreUrls: true
-        }],
-        "max-lines": ["error", {
-            max: 250,
-            skipBlankLines: true,
-            skipComments: true
-        }],
-        "max-lines-per-function": ["error", {
-            max: 50,
-            skipBlankLines: true,
-            skipComments: true
-        }],
-        "max-nested-callbacks": ["error", {
-            max: 1
-        }],
-        "max-params": ["error", {
-            max: 3
-        }],
-        "max-statements-per-line": ["error", {
-            max: 1
-        }],
+        "max-len": [
+            "error", {
+                ignoreUrls: true
+            }
+        ],
+        "max-lines": [
+            "error", {
+                max: 250,
+                skipBlankLines: true,
+                skipComments: true
+            }
+        ],
+        "max-lines-per-function": [
+            "error", {
+                max: 50,
+                skipBlankLines: true,
+                skipComments: true
+            }
+        ],
+        "max-nested-callbacks": [
+            "error", {
+                max: 1
+            }
+        ],
+        "max-params": [
+            "error", {
+                max: 3
+            }
+        ],
+        "max-statements-per-line": [
+            "error", {
+                max: 1
+            }
+        ],
         "multiline-comment-style": ["error", "starred-block"],
-        "newline-per-chained-call": ["error", {
-            ignoreChainWithDepth: 1
-        }],
+        "newline-per-chained-call": [
+            "error", {
+                ignoreChainWithDepth: 1
+            }
+        ],
         "no-array-constructor": ["error"],
         "no-bitwise": ["error"],
         "no-continue": ["error"],
@@ -174,31 +225,49 @@ module.exports = {
         "no-negated-condition": ["error"],
         "no-nested-ternary": ["error"],
         "no-new-object": ["error"],
-        "no-plusplus": ["error", {
-            allowForLoopAfterthoughts: true
-        }],
-        "no-restricted-syntax": ["error", {
-            selector: "Identifier[name='then']",
-            message: "Use async/await!"
-        }],
+        "no-plusplus": [
+            "error", {
+                allowForLoopAfterthoughts: true
+            }
+        ],
+        "no-restricted-syntax": [
+            "error", {
+                selector: "Identifier[name='then']",
+                message: "Use async/await and not even think of using this identifier for something, you fool!"
+            }
+        ],
         "no-tabs": ["error"],
         "no-trailing-spaces": ["error"],
         "no-underscore-dangle": ["error"],
         "no-unneeded-ternary": ["error"],
         "no-whitespace-before-property": ["error"],
-        "object-curly-newline": ["error", {
-            "multiline": true
-        }],
+        "object-curly-newline": [
+            "error", {
+                ObjectExpression: "always",
+                ObjectPattern: {
+                    multiline: true
+                },
+                ImportDeclaration: {
+                    consistent: true,
+                    minProperties: 3
+                },
+                ExportDeclaration: "always"
+            }
+        ],
         "object-curly-spacing": ["error", "always"],
         "one-var-declaration-per-line": ["error", "always"],
+        "object-property-newline": ["error"],
         "operator-assignment": ["error", "always"],
         "operator-linebreak": ["error", "before"],
         "padded-blocks": ["error", "always"],
-        "padding-line-between-statements": ["error", {
+        "padding-line-between-statements": [
+            "error",
+            {
                 blankLine: "always",
                 prev: "*",
                 next: "return"
-            }, {
+            },
+            {
                 blankLine: "always",
                 prev: ["const", "let", "var"],
                 next: "*"
@@ -207,7 +276,8 @@ module.exports = {
                 blankLine: "any",
                 prev: ["const", "let", "var"],
                 next: ["const", "let", "var"]
-            }, {
+            },
+            {
                 blankLine: "always",
                 prev: ["case", "default"],
                 next: "*"
@@ -222,15 +292,19 @@ module.exports = {
         "space-before-function-paren": ["error", "always"],
         "space-in-parens": ["error", "never"],
         "space-infix-ops": ["error"],
-        "space-unary-ops": ["error", {
-            words: true,
-            nonwords: false
-        }],
+        "space-unary-ops": [
+            "error", {
+                words: true,
+                nonwords: false
+            }
+        ],
         "spaced-comment": ["error", "always"],
-        "switch-colon-spacing": ["error", {
-            after: true,
-            before: false
-        }],
+        "switch-colon-spacing": [
+            "error", {
+                after: true,
+                before: false
+            }
+        ],
         "template-tag-spacing": ["error", "always"],
         "unicode-bom": ["error", "never"],
         "wrap-regex": ["error"],
@@ -251,8 +325,8 @@ module.exports = {
         "prefer-spread": ["error"],
         "prefer-template": ["error"],
         "rest-spread-spacing": ["error", "never"],
-        "symbol-description":["error"],
-        "template-curly-spacing":["error"],
+        "symbol-description": ["error"],
+        "template-curly-spacing": ["error"],
         "yield-star-spacing": ["error", "before"]
     }
 }
