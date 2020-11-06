@@ -254,7 +254,10 @@ module.exports = {
     "no-whitespace-before-property": ["error"],
     "object-curly-newline": [
       "error", {
-        ObjectExpression: "always",
+        ObjectExpression: {
+          multiline: true,
+          minProperties: 1
+        },
         ObjectPattern: {
           multiline: true
         },
