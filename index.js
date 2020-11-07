@@ -5,14 +5,14 @@ module.exports = {
     node: true,
     browser: true,
     es2021: true,
-    worker: true
+    worker: true,
   },
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   parser: "babel-eslint",
   rules: {
@@ -26,8 +26,8 @@ module.exports = {
     "class-methods-use-this": ["error"],
     complexity: [
       "error", {
-        max: 5
-      }
+        max: 5,
+      },
     ],
     "consistent-return": ["error"],
     "default-case": ["error"],
@@ -58,8 +58,8 @@ module.exports = {
     "no-loop-func": ["error"],
     "no-magic-numbers": [
       "error", {
-        ignoreDefaultValues: true
-      }
+        ignoreDefaultValues: true,
+      },
     ],
     "no-multi-spaces": ["error"],
     "no-new": ["error"],
@@ -92,25 +92,25 @@ module.exports = {
     "no-undefined": ["error"],
     "array-bracket-newline": [
       "error", {
-        multiline: true
-      }
+        multiline: true,
+      },
     ],
     "array-bracket-spacing": ["error", "never"],
     "array-element-newline": ["error", "consistent"],
     "block-spacing": ["error", "always"],
     "brace-style": [
       "error", "1tbs", {
-        allowSingleLine: true
-      }
+        allowSingleLine: true,
+      },
     ],
     camelcase: ["error"],
     "capitalized-comments": ["error", "always"],
-    "comma-dangle": ["error", "never"],
+    "comma-dangle": ["error", "always-multiline"],
     "comma-spacing": [
       "error", {
         before: false,
-        after: true
-      }
+        after: true,
+      },
     ],
     "comma-style": ["error", "last"],
     "computed-property-spacing": ["error", "never"],
@@ -120,12 +120,16 @@ module.exports = {
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "expression"],
     "function-call-argument-newline": ["error", "consistent"],
-    "function-paren-newline": ["error", "multiline"],
+    "function-paren-newline": [
+      "error", {
+        minItems: 1,
+      },
+    ],
     "id-length": [
       "error", {
         min: 2,
-        max: 30
-      }
+        max: 30,
+      },
     ],
     indent: [
       // eslint-disable-next-line no-magic-numbers
@@ -135,95 +139,95 @@ module.exports = {
         MemberExpression: 2,
         FunctionDeclaration: {
           body: 1,
-          parameters: "first"
+          parameters: "first",
         },
         FunctionExpression: {
           body: 1,
-          parameters: "first"
+          parameters: "first",
         },
         CallExpression: {
-          arguments: "first"
+          arguments: "first",
         },
         ArrayExpression: "first",
         ObjectExpression: "first",
         ImportDeclaration: "first",
-        offsetTernaryExpressions: true
-      }
+        offsetTernaryExpressions: true,
+      },
     ],
     "jsx-quotes": ["error", "prefer-double"],
     "key-spacing": [
       "error", {
         beforeColon: false,
-        afterColon: true
-      }
+        afterColon: true,
+      },
     ],
     "keyword-spacing": [
       "error", {
         before: true,
-        after: true
-      }
+        after: true,
+      },
     ],
     "line-comment-position": [
       "error", {
-        position: "above"
-      }
+        position: "above",
+      },
     ],
     "linebreak-style": ["error", "unix"],
     "lines-around-comment": [
       "error", {
         beforeBlockComment: true,
-        afterBlockComment: true,
+        afterBlockComment: false,
         beforeLineComment: true,
         afterLineComment: false,
         allowArrayStart: true,
-        allowObjectStart: true
-      }
+        allowObjectStart: true,
+      },
     ],
     "lines-between-class-members": ["error", "always"],
     "max-depth": [
       "error", {
-        max: 3
-      }
+        max: 3,
+      },
     ],
     "max-len": [
       "error", {
-        ignoreUrls: true
-      }
+        ignoreUrls: true,
+      },
     ],
     "max-lines": [
       "error", {
         max: 250,
         skipBlankLines: true,
-        skipComments: true
-      }
+        skipComments: true,
+      },
     ],
     "max-lines-per-function": [
       "error", {
         max: 50,
         skipBlankLines: true,
-        skipComments: true
-      }
+        skipComments: true,
+      },
     ],
     "max-nested-callbacks": [
       "error", {
-        max: 1
-      }
+        max: 1,
+      },
     ],
     "max-params": [
       "error", {
-        max: 3
-      }
+        max: 3,
+      },
     ],
     "max-statements-per-line": [
       "error", {
-        max: 1
-      }
+        max: 1,
+      },
     ],
     "multiline-comment-style": ["error", "starred-block"],
     "newline-per-chained-call": [
       "error", {
-        ignoreChainWithDepth: 1
-      }
+        ignoreChainWithDepth: 1,
+      },
     ],
     "no-array-constructor": ["error"],
     "no-bitwise": ["error"],
@@ -231,21 +235,27 @@ module.exports = {
     "no-lonely-if": ["error"],
     "no-mixed-operators": ["error"],
     "no-multi-assign": ["error"],
-    "no-multiple-empty-lines": ["error"],
+    "no-multiple-empty-lines": [
+      "error", {
+        max: 1,
+        maxEOF: 0,
+        maxBOF: 0,
+      },
+    ],
     "no-negated-condition": ["error"],
     "no-nested-ternary": ["error"],
     "no-new-object": ["error"],
     "no-plusplus": [
       "error", {
-        allowForLoopAfterthoughts: true
-      }
+        allowForLoopAfterthoughts: true,
+      },
     ],
     "no-restricted-syntax": [
       "error", {
         selector: "Identifier[name='then']",
         message: `Use async/await and not even think of using 
-                    this identifier for something, you fool!`
-      }
+                    this identifier for something, you fool!`,
+      },
     ],
     "no-tabs": ["error"],
     "no-trailing-spaces": ["error"],
@@ -256,46 +266,46 @@ module.exports = {
       "error", {
         ObjectExpression: {
           multiline: true,
-          minProperties: 1
+          minProperties: 1,
         },
         ObjectPattern: {
-          multiline: true
+          multiline: true,
         },
         ImportDeclaration: {
           consistent: true,
-          minProperties: 3
+          minProperties: 3,
         },
-        ExportDeclaration: "always"
-      }
+        ExportDeclaration: "always",
+      },
     ],
     "object-curly-spacing": ["error", "always"],
     "one-var-declaration-per-line": ["error", "always"],
     "object-property-newline": ["error"],
     "operator-assignment": ["error", "always"],
     "operator-linebreak": ["error", "before"],
-    "padded-blocks": ["error", "always"],
+    "padded-blocks": ["error", "never"],
     "padding-line-between-statements": [
       "error",
       {
         blankLine: "always",
         prev: "*",
-        next: "return"
+        next: "return",
       },
       {
         blankLine: "always",
         prev: ["const", "let", "var"],
-        next: "*"
+        next: "*",
       },
       {
-        blankLine: "any",
+        blankLine: "never",
         prev: ["const", "let", "var"],
-        next: ["const", "let", "var"]
+        next: ["const", "let", "var"],
       },
       {
         blankLine: "always",
         prev: ["case", "default"],
-        next: "*"
-      }
+        next: "*",
+      },
     ],
     "prefer-exponentiation-operator": ["error"],
     "prefer-object-spread": ["error"],
@@ -303,27 +313,33 @@ module.exports = {
     quotes: ["error", "double"],
     semi: ["error", "never"],
     "space-before-blocks": ["error", "always"],
-    "space-before-function-paren": ["error", "always"],
+    "space-before-function-paren": [
+      "error", {
+        anonymous: "always",
+        named: "never",
+        asyncArrow: "always",
+      },
+    ],
     "space-in-parens": ["error", "never"],
     "space-infix-ops": ["error"],
     "space-unary-ops": [
       "error", {
         words: true,
-        nonwords: false
-      }
+        nonwords: false,
+      },
     ],
     "spaced-comment": ["error", "always"],
     "switch-colon-spacing": [
       "error", {
         after: true,
-        before: false
-      }
+        before: false,
+      },
     ],
     "template-tag-spacing": ["error", "always"],
     "unicode-bom": ["error", "never"],
     "wrap-regex": ["error"],
     "arrow-body-style": ["error", "as-needed"],
-    "arrow-parens": ["error", "as-needed"],
+    "arrow-parens": ["error", "always"],
     "arrow-spacing": ["error"],
     "no-confusing-arrow": ["error"],
     "no-duplicate-imports": ["error"],
@@ -341,6 +357,14 @@ module.exports = {
     "rest-spread-spacing": ["error", "never"],
     "symbol-description": ["error"],
     "template-curly-spacing": ["error"],
-    "yield-star-spacing": ["error", "before"]
-  }
+    "yield-star-spacing": ["error", "before"],
+    "implicit-arrow-linebreak": ["error", "beside"],
+    "one-var": ["error", "never"],
+    "semi-spacing": [
+      "error", {
+        before: false,
+        after: true,
+      },
+    ],
+  },
 }
