@@ -120,11 +120,7 @@ module.exports = {
     "func-names": ["error", "as-needed"],
     "func-style": ["error", "expression"],
     "function-call-argument-newline": ["error", "consistent"],
-    "function-paren-newline": [
-      "error", {
-        minItems: 1,
-      },
-    ],
+    "function-paren-newline": ["error", "multiline"],
     "id-length": [
       "error", {
         min: 2,
