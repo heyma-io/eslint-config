@@ -56,11 +56,6 @@ module.exports = {
     "no-labels": ["error"],
     "no-lone-blocks": ["error"],
     "no-loop-func": ["error"],
-    "no-magic-numbers": [
-      "error", {
-        ignoreDefaultValues: true,
-      },
-    ],
     "no-multi-spaces": ["error"],
     "no-new": ["error"],
     "no-new-func": ["error"],
@@ -128,7 +123,6 @@ module.exports = {
       },
     ],
     indent: [
-      // eslint-disable-next-line no-magic-numbers
       "error", 2, {
         SwitchCase: 1,
         VariableDeclarator: "first",
