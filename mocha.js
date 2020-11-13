@@ -11,7 +11,7 @@ module.exports = {
     ],
     "max-nested-callbacks": [
       "error", {
-        max: 3,
+        max: 5,
       },
     ],
     "padded-blocks": [
