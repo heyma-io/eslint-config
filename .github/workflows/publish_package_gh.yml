@@ -22,7 +22,6 @@ jobs:
       - name: Build
         run: |
           npm i
-          npm run build
           
       - run: npm publish --access public
         env:
