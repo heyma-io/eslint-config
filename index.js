@@ -26,7 +26,7 @@ module.exports = {
     "class-methods-use-this": ["error"],
     complexity: [
       "error", {
-        max: 5,
+        max: 8,
       },
     ],
     "consistent-return": ["error"],
@@ -73,7 +73,7 @@ module.exports = {
     "no-unused-expressions": ["error"],
     "no-useless-call": ["error"],
     "no-useless-concat": ["error"],
-    "no-useless-return": ["error"],
+    "no-useless-return": ["warn"],
     "no-void": ["error"],
     "prefer-promise-reject-errors": ["error"],
     radix: ["error"],
@@ -120,6 +120,7 @@ module.exports = {
       "error", {
         min: 2,
         max: 30,
+        exceptions: ["_", "e"]
       },
     ],
     indent: [
@@ -193,14 +194,14 @@ module.exports = {
     ],
     "max-lines-per-function": [
       "error", {
-        max: 50,
+        max: 80,
         skipBlankLines: true,
         skipComments: true,
       },
     ],
     "max-nested-callbacks": [
       "error", {
-        max: 1,
+        max: 3,
       },
     ],
     "max-params": [
@@ -273,7 +274,7 @@ module.exports = {
     "object-property-newline": ["error"],
     "operator-assignment": ["error", "always"],
     "operator-linebreak": ["error", "before"],
-    "padded-blocks": ["error", "never"],
+    "padded-blocks": "off",
     "padding-line-between-statements": [
       "error",
       {
@@ -356,5 +357,6 @@ module.exports = {
         after: true,
       },
     ],
+    "no-unused-vars": ["warn"]
   },
 }
